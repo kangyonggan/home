@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
     <!-- inline styles related to this page -->
-    <link rel="stylesheet" href="${ctx}static/app/css/app.css"/>
+    <link rel="stylesheet" href="${ctx}/static/app/css/app.css"/>
 <@block name="style"/>
 </head>
 <body>
@@ -24,7 +24,6 @@
 <#include "footer.ftl">
 
 <script>var ctx = '${ctx}';</script>
-<script src="${ctx}/static/libs/jquery/jquery.min.js"></script>
 <@block name="script"/>
 
 </body>
