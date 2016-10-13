@@ -440,6 +440,35 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     height: 100%;
 }
 
+.scroll-bar {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 99999;
+}
+
+.scroll-bar > a {
+    display: block;
+    width: 30px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #FF482C;
+    border-radius: 5px;
+    color: #FF482C;
+}
+
+.scroll-bar > a.top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0;
+}
+
+.scroll-bar > a.bottom {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 /*extra small screen*/
 @media (max-width: 767px) {
     .hidden-xs {

@@ -38,7 +38,6 @@
 </@override>
 
 <@override name="script">
-<script src="${ctx}/static/libs/jquery/jquery.min.js"></script>
 <script src="${ctx}/static/libs/markdown/marked.min.js"></script>
 <script>
     $.get("${ctx}/category/${article.categoryCode}/article/${article.id}/body", function (data) {
