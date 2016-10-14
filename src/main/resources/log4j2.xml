@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN" monitorInterval="300">
-    <properties>
-        <property name="LOG_HOME">/Users/kyg/logs/home/</property>
-        <property name="ALL_FILE_NAME">home</property>
-        <property name="ERROR_FILE_NAME">home-error</property>
-    </properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%logger{36}.%t:%L] - %msg%n"/>
         </Console>
-        <RollingRandomAccessFile name="AllFile" fileName="${LOG_HOME}/${ALL_FILE_NAME}-all.log"
-                                 filePattern="${LOG_HOME}/${ALL_FILE_NAME}-%d{yyyy-MM-dd}-%i.log">
+        <RollingRandomAccessFile name="AllFile" fileName="${log4j2.filename}-all.log"
+                                 filePattern="${log4j2.filename}-error-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%logger{36}.%t:%L] - %msg%n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1"/>
@@ -22,8 +17,8 @@
                 <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
             </Filters>
         </RollingRandomAccessFile>
-        <RollingRandomAccessFile name="ErrorFile" fileName="${LOG_HOME}/${ERROR_FILE_NAME}.log"
-                                 filePattern="${LOG_HOME}/${ERROR_FILE_NAME}-%d{yyyy-MM-dd}-%i.log">
+        <RollingRandomAccessFile name="ErrorFile" fileName="${log4j2.filename}-error.log"
+                                 filePattern="${log4j2.filename}-error-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%logger{36}.%t:%L] - %msg%n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1"/>

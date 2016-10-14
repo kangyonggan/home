@@ -5,7 +5,7 @@
 
 <ul class="breadcrumbs">
     <li>当前位置:</li>
-    <li><a href="${ctx}/">康永敢</a></li>
+    <li><a href="${ctx}/">${appAuthor}</a></li>
     <li>&gt;</li>
     <li><a href="${ctx}/category/${category.code}">${category.name}</a></li>
     <li>&gt;</li>
@@ -31,7 +31,7 @@
 <div id="article-body" class="hidden"></div>
 <div class="space-240"></div>
 <div class="article-fixed-bottom">
-    <div class="pull-right"><@spring.message "app.author"/></div>
+    <div class="pull-right">${appAuthor}</div>
     <div class="space-10"></div>
     <div class="pull-right">${article.createdTime?datetime}</div>
 </div>

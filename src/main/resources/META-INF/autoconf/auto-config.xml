@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <group>
+        <!-- dubbo -->
+        <property name="dubbo.name" description="消费者名字" defaultValue="HOME_CONSUMER"/>
+        <property name="dubbo.registry.address" description="dubbo注册地址" defaultValue="zookeeper://127.0.0.1:2181"/>
+        <property name="dubbo.timeout" description="dubbo超时时间" defaultValue="10000"/>
+        <property name="dubbo.api.version" description="api提供接口的版本" defaultValue="1.0.0"/>
+
+        <!-- log4j2 -->
+        <property name="log4j2.filename" description="log4j2日志的文件名" defaultValue="/root/logs/home/home"/>
+
+    </group>
+    <script>
+        <generate template="applicationContext-consumer.xml"/>
+        <generate template="applicationContext-mvc.xml"/>
+        <generate template="log4j2.xml"/>
+    </script>
+</config>

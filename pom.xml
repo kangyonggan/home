@@ -19,6 +19,7 @@
         <!--plugin-->
         <plugin.compiler.version>3.2</plugin.compiler.version>
         <plugin.tomcat.version>2.2</plugin.tomcat.version>
+        <autoconfig.version>1.2</autoconfig.version>
         <!--lombok-->
         <lombok.version>1.16.8</lombok.version>
         <fastjson.version>1.2.8</fastjson.version>
@@ -65,6 +66,25 @@
                     <path>/</path>
                     <uriEncoding>${project.build.sourceEncoding}</uriEncoding>
                 </configuration>
+            </plugin>
+
+            <!-- autoconfig -->
+            <plugin>
+                <groupId>com.alibaba.citrus.tool</groupId>
+                <artifactId>autoconfig-maven-plugin</artifactId>
+                <version>${autoconfig.version}</version>
+                <configuration>
+                    <userProperties>antx.properties</userProperties>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>autoconfig</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
-    <title>康永敢 - ${title!''}</title>
+    <title>${appAuthor} - ${title!''}</title>
     <link rel="icon" type="image/ico" href="${ctx}/static/app/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 

@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-fixed-top">
     <div class="pull-left margin-left-20">
-        <a href="${ctx}/" class="font-22 letter-1"><@spring.message "app.author"/></a>
+        <a href="${ctx}/" class="font-22 letter-1">${appAuthor}</a>
     </div>
 
 <#if category??>

@@ -11,14 +11,14 @@
     <dubbo:application name="HOME_CONSUMER"/>
 
     <!-- dubbo注册地址 -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="${dubbo.registry.address}"/>
 
     <!-- dubbo调用远程接口 -->
     <dubbo:reference id="articleService" cluster="failfast"
                      interface="com.kangyonggan.api.service.ArticleService"
-                     lazy="true" check="false" version="1.0.0" timeout="10000"/>
+                     lazy="true" check="false" version="${dubbo.api.version}" timeout="${dubbo.timeout}"/>
     <dubbo:reference id="categoryService" cluster="failfast"
                      interface="com.kangyonggan.api.service.CategoryService"
-                     lazy="true" check="false" version="1.0.0" timeout="10000"/>
+                     lazy="true" check="false" version="${dubbo.api.version}" timeout="${dubbo.timeout}"/>
 
 </beans>

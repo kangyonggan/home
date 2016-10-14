@@ -5,5 +5,5 @@
         <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16017743号</a>
     </span>
 
-    Build By <a href="${ctx}/about"><@spring.message "app.author"/></a>
+    Build By <a href="${ctx}/about">${appAuthor}</a>
 </footer>
