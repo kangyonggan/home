@@ -39,6 +39,10 @@ public class CategoryController {
                         @RequestParam(value = "p", required = false, defaultValue = "1") int pageNum,
                         Model model) {
         Category category = categoryService.findCategoryByCode(code);
+        if (category == null) {
+            return "404";
+        }
+
         PageInfo<Article> page = articleService.findArticlesByPage(pageNum, category.getCode());
 
         model.addAttribute("page", page);
@@ -57,6 +61,11 @@ public class CategoryController {
     @RequestMapping(value = "{code:[\\w]+}/article/{id:[\\d]+}", method = RequestMethod.GET)
     public String detail(@PathVariable("code") String code, @PathVariable("id") Long id, Model model) {
         Article article = articleService.findArticleById(id);
+
+        if (article == null) {
+            return "404";
+        }
+
         Category category = categoryService.findCategoryByCode(code);
 
         model.addAttribute("article", article);

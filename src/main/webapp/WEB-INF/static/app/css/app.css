@@ -313,6 +313,10 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     font-size: 16px;
 }
 
+.font-18 {
+    font-size: 18px;
+}
+
 .font-22 {
     font-size: 22px;
 }

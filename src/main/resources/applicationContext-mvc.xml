@@ -44,6 +44,8 @@
 
     <mvc:resources mapping="/static/**" location="/WEB-INF/static/" cache-period="31556926"/>
 
+    <mvc:view-controller path="/404" view-name="/404"/>
+
     <bean id="exceptionResolver" class="com.kangyonggan.home.exception.CustomSimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
