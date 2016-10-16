@@ -68,7 +68,7 @@
 </div>
 <div class="space-240"></div>
 <div class="article-fixed-bottom">
-    <div class="pull-right"><@spring.message "app.author"/></div>
+    <div class="pull-right">康永敢</div>
     <div class="space-10"></div>
     <div class="pull-right">2016-10-14 12:28:34</div>
 </div>

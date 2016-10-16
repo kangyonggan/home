@@ -107,4 +107,9 @@
             </map>
         </property>
     </bean>
+
+    <!-- 日志拦截器 -->
+    <mvc:interceptors>
+        <bean class="com.kangyonggan.home.interceptor.LogInterceptor"/>
+    </mvc:interceptors>
 </beans>
