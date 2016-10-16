@@ -66,6 +66,11 @@ public class CategoryController {
             return "404";
         }
 
+        /**
+         * 增加浏览量
+         */
+        articleService.updateArticleHits(id);
+
         Category category = categoryService.findCategoryByCode(code);
 
         model.addAttribute("article", article);
