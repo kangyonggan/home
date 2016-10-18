@@ -20,11 +20,6 @@
 
 <div class="text-center">
     <div class="article-title">${article.title}</div>
-    <div class="space-10"></div>
-    <div class="article-header">
-        <a href="${ctx}/category/${article.categoryCode}"><span>${article.categoryName}</span></a>
-        <span>${article.hits}次浏览</span>
-    </div>
 </div>
 <div class="space-20"></div>
 <div>${article.body}</div>

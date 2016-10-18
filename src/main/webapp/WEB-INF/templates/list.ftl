@@ -26,7 +26,6 @@
                 <div class="space-5"></div>
                 <div class="article-header">
                     <a href="${ctx}/category/${article.categoryCode}"><span>${article.categoryName}</span></a>
-                    <span>${article.hits}次浏览</span>
                     <em>${article.createdTime?datetime}</em>
                 </div>
                 <div class="space-10"></div>
