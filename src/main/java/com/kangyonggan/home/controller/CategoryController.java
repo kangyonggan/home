@@ -6,6 +6,7 @@ import com.kangyonggan.api.model.Category;
 import com.kangyonggan.api.service.ArticleService;
 import com.kangyonggan.api.service.CategoryService;
 import lombok.extern.log4j.Log4j2;
+import org.pegdown.PegDownProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -73,21 +74,14 @@ public class CategoryController {
 
         Category category = categoryService.findCategoryByCode(code);
 
+        /**
+         * markdown2html
+         */
+        article.setBody(new PegDownProcessor(Integer.MAX_VALUE).markdownToHtml(article.getBody()));
+
         model.addAttribute("article", article);
         model.addAttribute("category", category);
         return "detail";
-    }
-
-    /**
-     * 查询文章内容
-     *
-     * @param id
-     * @return
-     */
-    @RequestMapping(value = "{code:[\\w]+}/article/{id:[\\d]+}/body", method = RequestMethod.GET)
-    @ResponseBody
-    public Article body(@PathVariable("id") Long id) {
-        return articleService.findArticleById(id);
     }
 
 }

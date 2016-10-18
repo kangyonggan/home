@@ -31,6 +31,8 @@
         <log4j2.api.version>2.5</log4j2.api.version>
         <pinyin4j.version>2.5.1</pinyin4j.version>
 
+        <pegdown.version>1.6.0</pegdown.version>
+
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <freemarker.version>2.3.22</freemarker.version>
         <!--dubbo-->
@@ -164,6 +166,13 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+
+        <!--markdown2html-->
+        <dependency>
+            <groupId>org.pegdown</groupId>
+            <artifactId>pegdown</artifactId>
+            <version>${pegdown.version}</version>
         </dependency>
 
         <!-- dubbo -->

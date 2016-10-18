@@ -28,8 +28,6 @@
     <a href="javascript:scroll(0, 9999999999)" class="bottom">&darr;</a>
 </div>
 
-<script>var ctx = '${ctx}';</script>
-<script src="${ctx}/static/libs/jquery/jquery.min.js"></script>
 <@block name="script"/>
 
 </body>

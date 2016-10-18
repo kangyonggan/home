@@ -27,30 +27,13 @@
     </div>
 </div>
 <div class="space-20"></div>
-<div id="article-body-md" class="text-center">正在把markdown语法转成html...</div>
-<div id="article-body" class="hidden"></div>
+<div>${article.body}</div>
 <div class="space-240"></div>
 <div class="article-fixed-bottom">
     <div class="pull-right">${appAuthor}</div>
     <div class="space-10"></div>
     <div class="pull-right">${article.createdTime?datetime}</div>
 </div>
-</@override>
-
-<@override name="script">
-<script src="${ctx}/static/libs/markdown/marked.min.js"></script>
-<script>
-    $.get("${ctx}/category/${article.categoryCode}/article/${article.id}/body", function (data) {
-        data = eval('(' + data + ')');
-        var $body = $("#article-body");
-        $body.html(marked(data.body));
-
-        $("#article-body-md").addClass("hidden");
-        $body.removeClass("hidden");
-
-        $("#article-body a").prop("target", "_blank");
-    });
-</script>
 </@override>
 
 <@extends name="layout.ftl"/>
