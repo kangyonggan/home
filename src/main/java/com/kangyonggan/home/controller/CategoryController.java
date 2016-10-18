@@ -5,6 +5,7 @@ import com.kangyonggan.api.model.Article;
 import com.kangyonggan.api.model.Category;
 import com.kangyonggan.api.service.ArticleService;
 import com.kangyonggan.api.service.CategoryService;
+import com.kangyonggan.home.util.MarkdownUtil;
 import lombok.extern.log4j.Log4j2;
 import org.pegdown.PegDownProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,7 +78,7 @@ public class CategoryController {
         /**
          * markdown2html
          */
-        article.setBody(new PegDownProcessor(Integer.MAX_VALUE).markdownToHtml(article.getBody()));
+        article.setBody(MarkdownUtil.markdownToHtml(article.getBody()));
 
         model.addAttribute("article", article);
         model.addAttribute("category", category);
