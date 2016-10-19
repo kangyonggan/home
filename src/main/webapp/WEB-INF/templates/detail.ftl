@@ -30,7 +30,7 @@
     <div class="pull-right">${article.createdTime?datetime}</div>
 </div>
 
-<audio class="hidden" autoplay="autoplay" src="http://tsn.baidu.com/text2audio?tex=${txt!'作者比较懒，没有写这篇文章的摘要！'}&lan=zh&tok=24.6033eb52a02cf7c0a98355196b2d621d.2592000.1479459140.282335-8767892&ctp=1&cuid=ac:bc:32:d4:d5:47&spd=5&pit=5&vol=5&per=0"></audio>
+<audio class="hidden" autoplay="autoplay" src="http://tsn.baidu.com/text2audio?tex=${txt!'作者比较懒，没有写这篇文章的摘要！'}&lan=zh&tok=24.6033eb52a02cf7c0a98355196b2d621d.2592000.1479459140.282335-8767892&ctp=1&cuid=ac:bc:32:d4:d5:47&spd=5&pit=5&vol=9&per=0"></audio>
 
 </@override>
 
