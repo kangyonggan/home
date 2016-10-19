@@ -13,6 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 /**
  * @author kangyonggan
  * @since 16/10/12
@@ -59,9 +62,10 @@ public class CategoryController {
      * @param id
      * @param model
      * @return
+     * @throws UnsupportedEncodingException
      */
     @RequestMapping(value = "{code:[\\w]+}/article/{id:[\\d]+}", method = RequestMethod.GET)
-    public String detail(@PathVariable("code") String code, @PathVariable("id") Long id, Model model) {
+    public String detail(@PathVariable("code") String code, @PathVariable("id") Long id, Model model) throws UnsupportedEncodingException {
         Article article = articleService.findArticleById(id);
 
         if (article == null) {
@@ -82,6 +86,7 @@ public class CategoryController {
 
         model.addAttribute("article", article);
         model.addAttribute("category", category);
+        model.addAttribute("txt", URLEncoder.encode(article.getSummary(), "UTF-8"));
         return "detail";
     }
 
