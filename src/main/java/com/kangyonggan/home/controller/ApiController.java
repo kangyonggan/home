@@ -1,8 +1,6 @@
 package com.kangyonggan.home.controller;
 
-import com.kangyonggan.api.model.Category;
-import com.kangyonggan.api.model.IpResponse;
-import com.kangyonggan.api.model.RetData;
+import com.kangyonggan.api.model.*;
 import com.kangyonggan.api.service.ApiService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,6 +71,54 @@ public class ApiController {
 
         model.addAttribute("apiCode", "ip");
         model.addAttribute("apiName", "IP地址查询");
+        model.addAttribute("category", category);
+        model.addAttribute("results", results);
+        model.addAttribute("response", response.toString());
+        return PATH_RESULT;
+    }
+
+    /**
+     * 身份证查询的api界面
+     *
+     * @return
+     */
+    @RequestMapping(value = "idcard", method = RequestMethod.GET)
+    public String idcard(Model model) {
+        Category category = new Category();
+        category.setName("身份证查询");
+        category.setCode("all");
+
+        model.addAttribute("category", category);
+        return PATH_IP;
+    }
+
+    /**
+     * 身份证查询的api
+     *
+     * @return
+     */
+    @RequestMapping(value = "idcard", method = RequestMethod.POST)
+    public String idcardApi(@RequestParam("idcard") String idcard, Model model) {
+        Map<String, String> results = new HashMap();
+
+        IdcardResponse response = apiService.findIdcardData(idcard);
+        log.info("ip查询结果：{}", response);
+
+        if (response.getError() == 0 && "succeed".equals(response.getMsg())) {
+            Data data = response.getData();
+            results.put("地扯", data.getAddress());
+            results.put("生日", data.getBirthday());
+            results.put("星座", data.getConstellation());
+            results.put("性别", data.getGender());
+            results.put("身份证号码", data.getIdcard());
+            results.put("生肖", data.getZodiac());
+        }
+        Category category = new Category();
+        category.setName("身份证查询结果");
+        category.setCode("all");
+
+        model.addAttribute("apiCode", "idcard");
+        model.addAttribute("apiName", "身份证查询");
         model.addAttribute("category", category);
         model.addAttribute("results", results);
         model.addAttribute("response", response.toString());
