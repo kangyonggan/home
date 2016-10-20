@@ -69,6 +69,17 @@ img {
     border: 0;
 }
 
+.markdown-body table {
+    border: 1px solid #FD6639;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.markdown-body table tr td, th {
+    border: 1px solid #FD6639;
+    padding: 5px 8px;
+}
+
 .navbar {
     height: 50px;
     line-height: 50px;
@@ -118,7 +129,6 @@ img {
 .nav-list > li:hover > a {
     color: #FD6639;
 }
-
 
 .pagination {
     margin-bottom: 40px;
@@ -518,9 +528,11 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     .container {
         width: 96%;
     }
+
     .article-fixed-bottom {
         right: 2%;
     }
+
     .footer-code {
         display: none;
     }
@@ -539,9 +551,11 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     .container {
         width: 90%;
     }
+
     .article-fixed-bottom {
         right: 5%;
     }
+
     .footer-code {
         right: 5%;
     }
@@ -552,9 +566,11 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     .container {
         width: 86%;
     }
+
     .article-fixed-bottom {
         right: 7%;
     }
+
     .footer-code {
         right: 7%;
     }
@@ -565,9 +581,11 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     .container {
         width: 80%;
     }
+
     .article-fixed-bottom {
         right: 10%;
     }
+
     .footer-code {
         right: 10%;
     }
