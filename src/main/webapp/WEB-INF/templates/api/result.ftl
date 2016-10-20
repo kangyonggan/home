@@ -31,7 +31,7 @@
 <div class="space-30"></div>
 
 <div>
-    ${response!'无响应'}
+    原响应结果：${response!'无响应'}
 </div>
 
 </@override>
