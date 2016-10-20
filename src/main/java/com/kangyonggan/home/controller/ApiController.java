@@ -37,7 +37,12 @@ public class ApiController {
      * @return
      */
     @RequestMapping(value = "ip", method = RequestMethod.GET)
-    public String ip() {
+    public String ip(Model model) {
+        Category category = new Category();
+        category.setName("IP地址查询结果");
+        category.setCode("all");
+
+        model.addAttribute("category", "category");
         return PATH_IP;
     }
 

@@ -1,4 +1,4 @@
-<#assign title="IP地址查询"/>
+<#assign title="${category.name}"/>
 
 <@override name="content">
 <div class="space-30"></div>
@@ -7,7 +7,7 @@
     <li>当前位置:</li>
     <li><a href="${ctx}/">${appAuthor}</a></li>
     <li>&gt;</li>
-    <li class="active">IP地址查询</li>
+    <li class="active">${category.name}</li>
 </ul>
 
 <div class="space-10"></div>
