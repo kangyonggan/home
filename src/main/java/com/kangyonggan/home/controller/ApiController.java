@@ -58,7 +58,7 @@ public class ApiController {
         log.info("ip查询结果：{}", response);
 
         if (response.getErrNum() == 0 && "success".equals(response.getErrMsg())) {
-            RetData data = response.getRetData();
+            IpData data = response.getRetData();
             results.put("IP地址", data.getIp());
             results.put("国家", data.getCountry());
             results.put("省份", data.getProvince());
@@ -103,10 +103,10 @@ public class ApiController {
         Map<String, String> results = new HashMap();
 
         IdcardResponse response = apiService.findIdcardData(idcard);
-        log.info("ip查询结果：{}", response);
+        log.info("身份证查询结果：{}", response);
 
         if (response.getError() == 0 && "succeed".equals(response.getMsg())) {
-            Data data = response.getData();
+            IdcardData data = response.getData();
             results.put("地扯", data.getAddress());
             results.put("生日", data.getBirthday());
             results.put("星座", data.getConstellation());
@@ -120,6 +120,54 @@ public class ApiController {
 
         model.addAttribute("apiCode", "idcard");
         model.addAttribute("apiName", "身份证查询");
+        model.addAttribute("category", category);
+        model.addAttribute("results", results);
+        model.addAttribute("response", response.toString());
+        return PATH_RESULT;
+    }
+
+    /**
+     * 银行卡号查询的api界面
+     *
+     * @return
+     */
+    @RequestMapping(value = "cardnum", method = RequestMethod.GET)
+    public String cardnum(Model model) {
+        Category category = new Category();
+        category.setName("银行卡查询");
+        category.setCode("all");
+
+        model.addAttribute("category", category);
+        return PATH_IDCARD;
+    }
+
+    /**
+     * 银行卡号查询的api
+     *
+     * @return
+     */
+    @RequestMapping(value = "cardnum", method = RequestMethod.POST)
+    public String cardnumApi(@RequestParam("cardnum") String cardnum, Model model) {
+        Map<String, String> results = new HashMap();
+
+        CardnumResponse response = apiService.findCardnumData(cardnum);
+        log.info("银行卡查询结果：{}", response);
+
+        if (response.getStatus() == 1) {
+            CardnumData data = response.getData();
+            results.put("银行卡的类型", data.getCardtype());
+            results.put("银行卡的长度", data.getCardlength());
+            results.put("银行卡前缀", data.getCardprefixnum());
+            results.put("银行卡名称", data.getCardname());
+            results.put("归属银行", data.getBankname());
+            results.put("内部结算代码", data.getBanknum());
+        }
+        Category category = new Category();
+        category.setName("银行卡查询结果");
+        category.setCode("all");
+
+        model.addAttribute("apiCode", "cardnum");
+        model.addAttribute("apiName", "银行卡查询");
         model.addAttribute("category", category);
         model.addAttribute("results", results);
         model.addAttribute("response", response.toString());
