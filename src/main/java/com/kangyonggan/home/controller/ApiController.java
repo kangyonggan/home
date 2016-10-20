@@ -24,6 +24,7 @@ public class ApiController {
 
     private static final String PATH_ROOT = "api/";
     private static final String PATH_IP = PATH_ROOT + "ip";
+    private static final String PATH_IDCARD = PATH_ROOT + "idcard";
     private static final String PATH_RESULT = PATH_ROOT + "result";
 
     @Autowired
@@ -89,7 +90,7 @@ public class ApiController {
         category.setCode("all");
 
         model.addAttribute("category", category);
-        return PATH_IP;
+        return PATH_IDCARD;
     }
 
     /**
