@@ -262,6 +262,13 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     z-index: 9999;
 }
 
+.footer-code {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -30px;
+}
+
 .pull-left {
     float: left;
 }
@@ -485,6 +492,9 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     .article-fixed-bottom {
         right: 2%;
     }
+    .footer-code {
+        display: none;
+    }
 }
 
 /*small screen*/
@@ -503,6 +513,9 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     .article-fixed-bottom {
         right: 5%;
     }
+    .footer-code {
+        right: 5%;
+    }
 }
 
 /*middle screen*/
@@ -513,6 +526,9 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     .article-fixed-bottom {
         right: 7%;
     }
+    .footer-code {
+        right: 7%;
+    }
 }
 
 /*large screen*/
@@ -521,6 +537,9 @@ input.search::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
         width: 80%;
     }
     .article-fixed-bottom {
+        right: 10%;
+    }
+    .footer-code {
         right: 10%;
     }
 }

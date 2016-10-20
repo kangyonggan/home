@@ -6,4 +6,6 @@
     </span>
 
     Build By <a href="${ctx}/about">${appAuthor}</a>
+
+    <img src="${ctx}/static/app/images/code.png" class="footer-code">
 </footer>
