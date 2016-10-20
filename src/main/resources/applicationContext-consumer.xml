@@ -20,5 +20,8 @@
     <dubbo:reference id="categoryService" cluster="failfast"
                      interface="com.kangyonggan.api.service.CategoryService"
                      lazy="true" check="false" version="${dubbo.api.version}" timeout="${dubbo.timeout}"/>
+    <dubbo:reference id="apiService" cluster="failfast"
+                     interface="com.kangyonggan.api.service.ApiService"
+                     lazy="true" check="false" version="${dubbo.api.version}" timeout="${dubbo.timeout}"/>
 
 </beans>
