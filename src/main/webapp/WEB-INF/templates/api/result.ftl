@@ -28,6 +28,12 @@
 <div>暂无查询结果， 请稍后重试！</div>
 </#if>
 
+<div class="space-30"></div>
+
+<div>
+    ${response!'无响应'}
+</div>
+
 </@override>
 
 <@extends name="../layout.ftl"/>

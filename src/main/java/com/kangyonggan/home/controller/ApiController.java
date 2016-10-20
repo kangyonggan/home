@@ -75,6 +75,7 @@ public class ApiController {
         model.addAttribute("apiName", "IP地址查询");
         model.addAttribute("category", category);
         model.addAttribute("results", results);
+        model.addAttribute("response", response.toString());
         return PATH_RESULT;
     }
 
