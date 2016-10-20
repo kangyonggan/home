@@ -39,10 +39,10 @@ public class ApiController {
     @RequestMapping(value = "ip", method = RequestMethod.GET)
     public String ip(Model model) {
         Category category = new Category();
-        category.setName("IP地址查询结果");
+        category.setName("IP地址查询");
         category.setCode("all");
 
-        model.addAttribute("category", "category");
+        model.addAttribute("category", category);
         return PATH_IP;
     }
 
@@ -58,7 +58,7 @@ public class ApiController {
         IpResponse response = apiService.findIpData(ip);
         log.info("ip查询结果：{}", response);
 
-        if (response.getErrNum() == 0) {
+        if (response.getErrNum() == 0 && "success".equals(response.getErrMsg())) {
             RetData data = response.getRetData();
             results.put("IP地址", data.getIp());
             results.put("国家", data.getCountry());
